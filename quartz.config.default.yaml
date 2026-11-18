@@ -8,7 +8,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: clarinep.github.io/buku
+  baseUrl: sethispr.github.io/libby
   ignorePatterns:
     - private
     - templates
