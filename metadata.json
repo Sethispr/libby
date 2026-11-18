@@ -1,0 +1,6 @@
+{
+  "name": "shiori",
+  "description": "Digital garden and reading log built with Quartz 5 and the Alice Velvet theme.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

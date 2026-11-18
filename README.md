@@ -1,11 +1,17 @@
-<div align="center">
+# Quartz v5
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
 
-  <h1>Built with AI Studio</h2>
+Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+[Join the Discord Community](https://discord.gg/cRFFHYye7t)
 
-</div>
+## Sponsors
+
+<p align="center">
+  <a href="https://github.com/sponsors/jackyzha0">
+    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
+  </a>
+</p>
