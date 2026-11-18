@@ -212,8 +212,8 @@ plugins:
     options:
       message: "shiori, personal reading log &amp; book notes"
       links:
-        2026 Shelf: /buku/2026/
-        GitHub: https://github.com/clarinep/buku
+        2026 Shelf: /libby/2026/
+        GitHub: https://github.com/sethispr/libby
         RSS: /buku/index.xml
     layout:
       position: footer
