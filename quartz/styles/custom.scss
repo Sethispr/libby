@@ -1,8 +1,8 @@
 @use "./variables.scss" as *;
 
 // ============================================================================
-// Alice Velvet for Quartz 5
-// Faithfully ported from https://github.com/kaymade/alice-velvet/blob/main/theme.css
+// Alice Velvet (Catppuccin Mauve Edition) for Quartz 5
+// Dark: Catppuccin Mocha + Mauve | Light: Catppuccin Latte + Mauve
 // ============================================================================
 
 :root {
@@ -29,231 +29,289 @@
   --radius-l: 8px;
 }
 
-// Dark mode is the reference palette
+// Dark mode: Catppuccin Mocha with Mauve accent
 :root,
 :root[saved-theme="dark"],
 body.theme-dark {
-  --alice-onyx: #241929;
-  --alice-onyx-deep: #1a1120;
-  --alice-wineshade: #5a4864;
-  --alice-wineshade-soft: #73607d;
-  --alice-gin-tonic: #e5e6e1;
-  --alice-gin-tonic-muted: #c9cbc5;
-  --alice-pink: #f696b3;
-  --alice-red-suits: #dd1440;
-  --alice-claret: #840b2a;
-  --alice-line: rgba(229, 230, 225, 0.15);
-  --alice-line-strong: rgba(246, 150, 179, 0.32);
-  --alice-glow: rgba(221, 20, 64, 0.2);
+  // Catppuccin Mocha Palette Tokens
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
 
-  --color-base-00: var(--alice-onyx);
-  --color-base-05: var(--alice-onyx-deep);
-  --color-base-10: #2d2033;
-  --color-base-20: var(--alice-wineshade);
+  // Mapped Theme Tokens
+  --alice-onyx: var(--ctp-base);
+  --alice-onyx-deep: var(--ctp-mantle);
+  --alice-wineshade: var(--ctp-surface2);
+  --alice-wineshade-soft: var(--ctp-overlay0);
+  --alice-gin-tonic: var(--ctp-text);
+  --alice-gin-tonic-muted: var(--ctp-subtext1);
+  --alice-pink: var(--ctp-mauve);
+  --alice-red-suits: var(--ctp-mauve);
+  --alice-claret: #7e57c2;
+  --alice-line: rgba(205, 214, 244, 0.14);
+  --alice-line-strong: rgba(203, 166, 247, 0.36);
+  --alice-glow: rgba(203, 166, 247, 0.22);
 
-  --background-primary: var(--alice-onyx);
-  --background-primary-alt: var(--alice-onyx-deep);
-  --background-secondary: #2d2033;
-  --background-secondary-alt: #211827;
+  --color-base-00: var(--ctp-base);
+  --color-base-05: var(--ctp-mantle);
+  --color-base-10: var(--ctp-surface0);
+  --color-base-20: var(--ctp-surface2);
+
+  --background-primary: var(--ctp-base);
+  --background-primary-alt: var(--ctp-mantle);
+  --background-secondary: var(--ctp-surface0);
+  --background-secondary-alt: var(--ctp-mantle);
   --background-modifier-border: var(--alice-line);
-  --background-modifier-border-hover: rgba(229, 230, 225, 0.25);
-  --background-modifier-border-focus: var(--alice-pink);
-  --background-modifier-form-field: rgba(229, 230, 225, 0.07);
-  --background-modifier-form-field-highlighted: rgba(229, 230, 225, 0.1);
-  --background-modifier-hover: rgba(246, 150, 179, 0.1);
-  --background-modifier-active: rgba(132, 11, 42, 0.48);
-  --background-modifier-selected: rgba(90, 72, 100, 0.52);
+  --background-modifier-border-hover: rgba(205, 214, 244, 0.24);
+  --background-modifier-border-focus: var(--ctp-mauve);
+  --background-modifier-form-field: rgba(205, 214, 244, 0.06);
+  --background-modifier-form-field-highlighted: rgba(205, 214, 244, 0.1);
+  --background-modifier-hover: rgba(203, 166, 247, 0.11);
+  --background-modifier-active: rgba(203, 166, 247, 0.24);
+  --background-modifier-selected: rgba(88, 91, 112, 0.5);
 
-  --text-normal: var(--alice-gin-tonic);
-  --text-muted: rgba(229, 230, 225, 0.68);
-  --text-faint: rgba(229, 230, 225, 0.44);
-  --text-on-accent: var(--alice-gin-tonic);
-  --text-accent: #ffb3c8;
-  --text-accent-hover: #ffd1de;
-  --text-selection: rgba(246, 150, 179, 0.28);
-  --text-highlight-bg: rgba(221, 20, 64, 0.3);
+  --text-normal: var(--ctp-text);
+  --text-muted: var(--ctp-subtext0);
+  --text-faint: var(--ctp-overlay1);
+  --text-on-accent: var(--ctp-crust);
+  --text-accent: var(--ctp-mauve);
+  --text-accent-hover: var(--ctp-lavender);
+  --text-selection: rgba(203, 166, 247, 0.28);
+  --text-highlight-bg: rgba(203, 166, 247, 0.26);
 
-  --interactive-normal: rgba(229, 230, 225, 0.08);
-  --interactive-hover: rgba(246, 150, 179, 0.16);
-  --interactive-accent: var(--alice-claret);
-  --interactive-accent-hover: #9b1136;
-  --interactive-success: #d9dccf;
+  --interactive-normal: rgba(205, 214, 244, 0.08);
+  --interactive-hover: rgba(203, 166, 247, 0.16);
+  --interactive-accent: var(--ctp-mauve);
+  --interactive-accent-hover: var(--ctp-lavender);
+  --interactive-success: var(--ctp-green);
 
-  --nav-item-color: rgba(229, 230, 225, 0.72);
-  --nav-item-color-hover: var(--alice-gin-tonic);
-  --nav-item-color-active: var(--alice-gin-tonic);
-  --nav-item-background-hover: rgba(246, 150, 179, 0.08);
-  --nav-item-background-active: rgba(132, 11, 42, 0.42);
-  --alice-first-letter: var(--alice-pink);
+  --nav-item-color: var(--ctp-subtext1);
+  --nav-item-color-hover: var(--ctp-text);
+  --nav-item-color-active: var(--ctp-mauve);
+  --nav-item-background-hover: rgba(203, 166, 247, 0.1);
+  --nav-item-background-active: rgba(203, 166, 247, 0.2);
+  --alice-first-letter: var(--ctp-mauve);
 
-  --blockquote-border-color: var(--alice-red-suits);
-  --blockquote-color: rgba(229, 230, 225, 0.82);
+  --blockquote-border-color: var(--ctp-mauve);
+  --blockquote-color: var(--ctp-subtext1);
 
-  --code-background: rgba(0, 0, 0, 0.28);
-  --code-normal: #f7f2fa;
-  --inline-code-color: #ffb3c8;
-  --inline-code-background: rgba(246, 150, 179, 0.14);
-  --inline-code-border-color: rgba(246, 150, 179, 0.35);
-  --code-border-color: rgba(246, 150, 179, 0.16);
-  --code-block-shadow: rgba(229, 230, 225, 0.07);
-  --code-tag: #ff5f8f;
-  --code-attribute: #ffd166;
-  --code-keyword: #c084fc;
-  --code-function: #7dd3fc;
-  --code-string: #a7f3a1;
-  --code-number: #fb7185;
-  --code-variable: #f0d6ff;
-  --code-punctuation: #d5cadc;
-  --code-comment: #9a8fa3;
-  --code-deleted: #fb7185;
-  --code-inserted: #a7f3a1;
+  --code-background: var(--ctp-crust);
+  --code-normal: var(--ctp-text);
+  --inline-code-color: var(--ctp-mauve);
+  --inline-code-background: rgba(203, 166, 247, 0.14);
+  --inline-code-border-color: rgba(203, 166, 247, 0.34);
+  --code-border-color: rgba(203, 166, 247, 0.18);
+  --code-block-shadow: rgba(17, 17, 27, 0.45);
+  --code-tag: var(--ctp-red);
+  --code-attribute: var(--ctp-yellow);
+  --code-keyword: var(--ctp-mauve);
+  --code-function: var(--ctp-blue);
+  --code-string: var(--ctp-green);
+  --code-number: var(--ctp-peach);
+  --code-variable: var(--ctp-flamingo);
+  --code-punctuation: var(--ctp-overlay2);
+  --code-comment: var(--ctp-overlay0);
+  --code-deleted: var(--ctp-red);
+  --code-inserted: var(--ctp-green);
 
-  --tag-color: var(--alice-gin-tonic);
-  --tag-background: rgba(132, 11, 42, 0.7);
-  --tag-background-hover: rgba(221, 20, 64, 0.78);
-  --link-decoration-color: rgba(246, 150, 179, 0.42);
+  --tag-color: var(--ctp-mauve);
+  --tag-background: rgba(203, 166, 247, 0.18);
+  --tag-background-hover: rgba(203, 166, 247, 0.32);
+  --link-decoration-color: rgba(203, 166, 247, 0.45);
 
-  --graph-node: var(--alice-wineshade-soft);
-  --graph-node-focused: var(--alice-pink);
-  --graph-node-tag: var(--alice-red-suits);
-  --graph-node-attachment: #b9a7c2;
-  --graph-node-unresolved: rgba(229, 230, 225, 0.38);
-  --graph-line: rgba(229, 230, 225, 0.2);
-  --graph-line-highlight: rgba(221, 20, 64, 0.9);
-  --graph-text: rgba(229, 230, 225, 0.86);
-  --graph-arrow: rgba(246, 150, 179, 0.5);
-  --alice-graph-surface: rgba(26, 17, 32, 0.9);
-  --alice-graph-surface-hover: rgba(90, 72, 100, 0.48);
-  --alice-graph-grid: rgba(229, 230, 225, 0.035);
-  --alice-graph-glow: rgba(246, 150, 179, 0.42);
+  --graph-node: var(--ctp-overlay0);
+  --graph-node-focused: var(--ctp-mauve);
+  --graph-node-tag: var(--ctp-pink);
+  --graph-node-attachment: var(--ctp-lavender);
+  --graph-node-unresolved: rgba(205, 214, 244, 0.34);
+  --graph-line: rgba(205, 214, 244, 0.18);
+  --graph-line-highlight: rgba(203, 166, 247, 0.9);
+  --graph-text: var(--ctp-subtext1);
+  --graph-arrow: rgba(203, 166, 247, 0.55);
+  --alice-graph-surface: rgba(24, 24, 37, 0.92);
+  --alice-graph-surface-hover: rgba(88, 91, 112, 0.48);
+  --alice-graph-grid: rgba(205, 214, 244, 0.035);
+  --alice-graph-glow: rgba(203, 166, 247, 0.42);
 
-  --checkbox-color: var(--alice-wineshade-soft);
-  --checkbox-color-hover: var(--alice-pink);
-  --checkbox-marker-color: var(--alice-gin-tonic);
+  --checkbox-color: var(--ctp-overlay0);
+  --checkbox-color-hover: var(--ctp-mauve);
+  --checkbox-marker-color: var(--ctp-crust);
 
-  // Quartz semantic tokens synced to Alice Velvet Dark
-  --light: #241929;
-  --lightgray: #3b2c43;
-  --gray: #73607d;
-  --darkgray: #e5e6e1;
-  --dark: #e5e6e1;
-  --secondary: #ffb3c8;
-  --tertiary: #ffd1de;
-  --highlight: rgba(132, 11, 42, 0.42);
-  --textHighlight: rgba(221, 20, 64, 0.3);
+  // Quartz semantic tokens synced to Catppuccin Mocha (Mauve)
+  --light: var(--ctp-base);
+  --lightgray: var(--ctp-surface1);
+  --gray: var(--ctp-overlay0);
+  --darkgray: var(--ctp-text);
+  --dark: var(--ctp-text);
+  --secondary: var(--ctp-mauve);
+  --tertiary: var(--ctp-lavender);
+  --highlight: rgba(203, 166, 247, 0.22);
+  --textHighlight: rgba(203, 166, 247, 0.26);
 }
 
-// Light mode: contrast-safe inversion of the dark Alice palette
+// Light mode: Catppuccin Latte with Mauve accent
 :root[saved-theme="light"],
 body.theme-light {
-  --alice-onyx: #241929;
-  --alice-onyx-deep: #1a1120;
-  --alice-wineshade: #5a4864;
-  --alice-wineshade-soft: #73607d;
-  --alice-gin-tonic: #e5e6e1;
-  --alice-gin-tonic-muted: #c9cbc5;
-  --alice-pink: #f696b3;
-  --alice-red-suits: #dd1440;
-  --alice-claret: #840b2a;
-  --alice-line: rgba(36, 25, 41, 0.15);
-  --alice-line-strong: rgba(132, 11, 42, 0.28);
-  --alice-glow: rgba(132, 11, 42, 0.14);
+  // Catppuccin Latte Palette Tokens
+  --ctp-rosewater: #dc8a78;
+  --ctp-flamingo: #dd7878;
+  --ctp-pink: #ea76cb;
+  --ctp-mauve: #8839ef;
+  --ctp-red: #d20f39;
+  --ctp-maroon: #e64553;
+  --ctp-peach: #fe640b;
+  --ctp-yellow: #df8e1d;
+  --ctp-green: #40a02b;
+  --ctp-teal: #179299;
+  --ctp-sky: #04a5e5;
+  --ctp-sapphire: #209fb5;
+  --ctp-blue: #1e66f5;
+  --ctp-lavender: #7287fd;
+  --ctp-text: #4c4f69;
+  --ctp-subtext1: #5c5f77;
+  --ctp-subtext0: #6c6f85;
+  --ctp-overlay2: #7c7f93;
+  --ctp-overlay1: #8c8fa1;
+  --ctp-overlay0: #9ca0b0;
+  --ctp-surface2: #acb0be;
+  --ctp-surface1: #bcc0cc;
+  --ctp-surface0: #ccd0da;
+  --ctp-base: #eff1f5;
+  --ctp-mantle: #e6e9ef;
+  --ctp-crust: #dce0e8;
 
-  --color-base-00: #e5e6e1;
-  --color-base-05: #dcddd8;
-  --color-base-10: #d1d0cc;
-  --color-base-20: #bdb7bf;
+  // Mapped Theme Tokens
+  --alice-onyx: var(--ctp-text);
+  --alice-onyx-deep: var(--ctp-crust);
+  --alice-wineshade: var(--ctp-subtext0);
+  --alice-wineshade-soft: var(--ctp-overlay1);
+  --alice-gin-tonic: var(--ctp-base);
+  --alice-gin-tonic-muted: var(--ctp-subtext1);
+  --alice-pink: var(--ctp-mauve);
+  --alice-red-suits: var(--ctp-mauve);
+  --alice-claret: var(--ctp-mauve);
+  --alice-line: rgba(76, 79, 105, 0.15);
+  --alice-line-strong: rgba(136, 57, 239, 0.32);
+  --alice-glow: rgba(136, 57, 239, 0.16);
 
-  --background-primary: #e5e6e1;
-  --background-primary-alt: #dcddd8;
-  --background-secondary: #f2f0ed;
-  --background-secondary-alt: #dedbd8;
+  --color-base-00: var(--ctp-base);
+  --color-base-05: var(--ctp-mantle);
+  --color-base-10: var(--ctp-crust);
+  --color-base-20: var(--ctp-surface1);
+
+  --background-primary: var(--ctp-base);
+  --background-primary-alt: var(--ctp-mantle);
+  --background-secondary: var(--ctp-mantle);
+  --background-secondary-alt: var(--ctp-crust);
   --background-modifier-border: var(--alice-line);
-  --background-modifier-border-hover: rgba(36, 25, 41, 0.25);
-  --background-modifier-border-focus: var(--alice-claret);
-  --background-modifier-form-field: rgba(36, 25, 41, 0.06);
-  --background-modifier-form-field-highlighted: rgba(36, 25, 41, 0.09);
-  --background-modifier-hover: rgba(132, 11, 42, 0.08);
-  --background-modifier-active: rgba(132, 11, 42, 0.16);
-  --background-modifier-selected: rgba(90, 72, 100, 0.16);
+  --background-modifier-border-hover: rgba(76, 79, 105, 0.26);
+  --background-modifier-border-focus: var(--ctp-mauve);
+  --background-modifier-form-field: rgba(76, 79, 105, 0.06);
+  --background-modifier-form-field-highlighted: rgba(76, 79, 105, 0.1);
+  --background-modifier-hover: rgba(136, 57, 239, 0.09);
+  --background-modifier-active: rgba(136, 57, 239, 0.18);
+  --background-modifier-selected: rgba(172, 176, 190, 0.35);
 
-  --text-normal: var(--alice-onyx);
-  --text-muted: var(--alice-wineshade);
-  --text-faint: rgba(36, 25, 41, 0.52);
-  --text-on-accent: var(--alice-gin-tonic);
-  --text-accent: var(--alice-claret);
-  --text-accent-hover: var(--alice-red-suits);
-  --text-selection: rgba(246, 150, 179, 0.35);
-  --text-highlight-bg: rgba(221, 20, 64, 0.16);
+  --text-normal: var(--ctp-text);
+  --text-muted: var(--ctp-subtext0);
+  --text-faint: var(--ctp-overlay1);
+  --text-on-accent: var(--ctp-base);
+  --text-accent: var(--ctp-mauve);
+  --text-accent-hover: var(--ctp-lavender);
+  --text-selection: rgba(136, 57, 239, 0.24);
+  --text-highlight-bg: rgba(136, 57, 239, 0.18);
 
-  --interactive-normal: rgba(36, 25, 41, 0.06);
-  --interactive-hover: rgba(132, 11, 42, 0.11);
-  --interactive-accent: var(--alice-claret);
-  --interactive-accent-hover: #9b1136;
-  --interactive-success: var(--alice-wineshade);
+  --interactive-normal: rgba(76, 79, 105, 0.06);
+  --interactive-hover: rgba(136, 57, 239, 0.12);
+  --interactive-accent: var(--ctp-mauve);
+  --interactive-accent-hover: var(--ctp-lavender);
+  --interactive-success: var(--ctp-green);
 
-  --nav-item-color: rgba(36, 25, 41, 0.72);
-  --nav-item-color-hover: var(--alice-onyx);
-  --nav-item-color-active: var(--alice-onyx);
-  --nav-item-background-hover: rgba(132, 11, 42, 0.08);
-  --nav-item-background-active: rgba(132, 11, 42, 0.14);
-  --alice-first-letter: var(--alice-red-suits);
+  --nav-item-color: var(--ctp-subtext1);
+  --nav-item-color-hover: var(--ctp-text);
+  --nav-item-color-active: var(--ctp-mauve);
+  --nav-item-background-hover: rgba(136, 57, 239, 0.09);
+  --nav-item-background-active: rgba(136, 57, 239, 0.16);
+  --alice-first-letter: var(--ctp-mauve);
 
-  --blockquote-border-color: var(--alice-claret);
-  --blockquote-color: rgba(36, 25, 41, 0.78);
+  --blockquote-border-color: var(--ctp-mauve);
+  --blockquote-color: var(--ctp-subtext1);
 
-  --code-background: rgba(36, 25, 41, 0.08);
-  --code-normal: #1f1724;
-  --inline-code-color: var(--alice-claret);
-  --inline-code-background: rgba(246, 150, 179, 0.32);
-  --inline-code-border-color: rgba(132, 11, 42, 0.28);
-  --code-border-color: rgba(36, 25, 41, 0.14);
-  --code-block-shadow: rgba(36, 25, 41, 0.1);
-  --code-tag: #b0003a;
-  --code-attribute: #7c4d00;
-  --code-keyword: #6d28d9;
-  --code-function: #005f8f;
-  --code-string: #216e39;
-  --code-number: #b42318;
-  --code-variable: #5b2a86;
-  --code-punctuation: #514858;
-  --code-comment: #6f6875;
-  --code-deleted: #b42318;
-  --code-inserted: #216e39;
+  --code-background: var(--ctp-mantle);
+  --code-normal: var(--ctp-text);
+  --inline-code-color: var(--ctp-mauve);
+  --inline-code-background: rgba(136, 57, 239, 0.12);
+  --inline-code-border-color: rgba(136, 57, 239, 0.28);
+  --code-border-color: rgba(76, 79, 105, 0.14);
+  --code-block-shadow: rgba(76, 79, 105, 0.08);
+  --code-tag: var(--ctp-red);
+  --code-attribute: var(--ctp-yellow);
+  --code-keyword: var(--ctp-mauve);
+  --code-function: var(--ctp-blue);
+  --code-string: var(--ctp-green);
+  --code-number: var(--ctp-peach);
+  --code-variable: var(--ctp-flamingo);
+  --code-punctuation: var(--ctp-overlay2);
+  --code-comment: var(--ctp-overlay0);
+  --code-deleted: var(--ctp-red);
+  --code-inserted: var(--ctp-green);
 
-  --tag-color: var(--alice-claret);
-  --tag-background: rgba(246, 150, 179, 0.38);
-  --tag-background-hover: rgba(246, 150, 179, 0.56);
-  --link-decoration-color: rgba(132, 11, 42, 0.35);
+  --tag-color: var(--ctp-mauve);
+  --tag-background: rgba(136, 57, 239, 0.14);
+  --tag-background-hover: rgba(136, 57, 239, 0.24);
+  --link-decoration-color: rgba(136, 57, 239, 0.38);
 
-  --graph-node: var(--alice-wineshade);
-  --graph-node-focused: var(--alice-claret);
-  --graph-node-tag: var(--alice-red-suits);
-  --graph-node-attachment: #6d5878;
-  --graph-node-unresolved: rgba(36, 25, 41, 0.34);
-  --graph-line: rgba(36, 25, 41, 0.22);
-  --graph-line-highlight: rgba(132, 11, 42, 0.82);
-  --graph-text: rgba(36, 25, 41, 0.84);
-  --graph-arrow: rgba(132, 11, 42, 0.48);
-  --alice-graph-surface: rgba(229, 230, 225, 0.9);
-  --alice-graph-surface-hover: rgba(246, 150, 179, 0.3);
-  --alice-graph-grid: rgba(36, 25, 41, 0.04);
-  --alice-graph-glow: rgba(132, 11, 42, 0.28);
+  --graph-node: var(--ctp-overlay1);
+  --graph-node-focused: var(--ctp-mauve);
+  --graph-node-tag: var(--ctp-pink);
+  --graph-node-attachment: var(--ctp-lavender);
+  --graph-node-unresolved: rgba(76, 79, 105, 0.34);
+  --graph-line: rgba(76, 79, 105, 0.2);
+  --graph-line-highlight: rgba(136, 57, 239, 0.85);
+  --graph-text: var(--ctp-subtext1);
+  --graph-arrow: rgba(136, 57, 239, 0.5);
+  --alice-graph-surface: rgba(239, 241, 245, 0.92);
+  --alice-graph-surface-hover: rgba(136, 57, 239, 0.18);
+  --alice-graph-grid: rgba(76, 79, 105, 0.04);
+  --alice-graph-glow: rgba(136, 57, 239, 0.28);
 
-  --checkbox-color: var(--alice-wineshade);
-  --checkbox-color-hover: var(--alice-claret);
-  --checkbox-marker-color: var(--alice-gin-tonic);
+  --checkbox-color: var(--ctp-overlay1);
+  --checkbox-color-hover: var(--ctp-mauve);
+  --checkbox-marker-color: var(--ctp-base);
 
-  // Quartz semantic tokens synced to Alice Velvet Light
-  --light: #e5e6e1;
-  --lightgray: #d1d0cc;
-  --gray: #5a4864;
-  --darkgray: #241929;
-  --dark: #241929;
-  --secondary: #840b2a;
-  --tertiary: #dd1440;
-  --highlight: rgba(246, 150, 179, 0.32);
-  --textHighlight: rgba(221, 20, 64, 0.16);
+  // Quartz semantic tokens synced to Catppuccin Latte (Mauve)
+  --light: var(--ctp-base);
+  --lightgray: var(--ctp-crust);
+  --gray: var(--ctp-subtext0);
+  --darkgray: var(--ctp-text);
+  --dark: var(--ctp-text);
+  --secondary: var(--ctp-mauve);
+  --tertiary: var(--ctp-lavender);
+  --highlight: rgba(136, 57, 239, 0.18);
+  --textHighlight: rgba(136, 57, 239, 0.18);
 }
 
 // ============================================================================
@@ -277,7 +335,7 @@ body {
 }
 
 .navigation-progress {
-  background: var(--alice-red-suits);
+  background: var(--ctp-mauve);
 }
 
 // ============================================================================
@@ -431,7 +489,7 @@ body {
     display: inline-block;
 
     &::first-letter {
-      color: var(--alice-pink);
+      color: var(--ctp-mauve);
     }
 
     &:hover {
@@ -499,7 +557,7 @@ button.readermode {
     color 140ms ease;
 
   &:hover {
-    background-color: rgba(246, 150, 179, 0.13);
+    background-color: var(--background-modifier-hover);
     border-color: var(--alice-line);
   }
 
@@ -516,8 +574,8 @@ button.readermode {
   background: var(--nav-item-background-active);
   border-color: var(--alice-line-strong);
   svg {
-    fill: var(--alice-pink);
-    stroke: var(--alice-pink);
+    fill: var(--ctp-mauve);
+    stroke: var(--ctp-mauve);
   }
 }
 
@@ -533,7 +591,7 @@ button.readermode {
     border-radius: var(--radius-m);
 
     &:hover {
-      background-color: rgba(246, 150, 179, 0.13);
+      background-color: var(--background-modifier-hover);
       color: var(--text-normal);
     }
 
@@ -548,7 +606,7 @@ button.readermode {
     }
 
     .fold {
-      color: var(--alice-pink);
+      color: var(--ctp-mauve);
     }
   }
 
@@ -602,8 +660,8 @@ button.readermode {
       }
 
       .folder-icon {
-        color: var(--alice-pink);
-        opacity: 0.88;
+        color: var(--ctp-mauve);
+        opacity: 0.9;
         margin-right: 0.35rem;
       }
 
@@ -719,7 +777,7 @@ h1.article-title {
   font-size: 2.8rem;
   line-height: 1.04;
   letter-spacing: 0;
-  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 8px 24px rgba(17, 17, 27, 0.32);
 
   @media (min-width: 601px) and (max-width: 900px) {
     font-size: 2.45rem;
@@ -743,7 +801,7 @@ body.theme-light h1.article-title {
   margin: 0 0 0.55rem 0;
 }
 
-// Tag pills (Obsidian-matched Emilys Candy pill styling)
+// Tag pills (Catppuccin Mauve pill styling)
 ul.tags {
   display: flex;
   flex-wrap: wrap;
@@ -766,7 +824,7 @@ a.internal.tag-link,
   align-items: center;
   padding: 0.14em 0.68em;
   margin: 0;
-  border: 1px solid rgba(246, 150, 179, 0.26);
+  border: 1px solid rgba(203, 166, 247, 0.3);
   border-radius: 999px;
   background: var(--tag-background);
   color: var(--tag-color);
@@ -806,7 +864,7 @@ a.internal.tag-link,
 }
 
 // ============================================================================
-// Article Reading Content (Exact port of .markdown-preview-view in theme.css)
+// Article Reading Content
 // ============================================================================
 
 article,
@@ -901,7 +959,7 @@ article,
     width: 4.5rem;
     height: 2px;
     margin-top: 0.35em;
-    background: linear-gradient(90deg, var(--alice-red-suits), transparent);
+    background: linear-gradient(90deg, var(--ctp-mauve), transparent);
   }
 
   // Anchor icon links next to headings
@@ -916,7 +974,7 @@ article,
     border-bottom: none;
   }
 
-  // Links (remove Quartz's box highlight on internal links)
+  // Links
   a:not(.tag-link):not([role="anchor"]):not(.data-footnote-backref) {
     color: var(--text-accent);
     border-bottom: 1px solid var(--link-decoration-color);
@@ -956,7 +1014,7 @@ article,
 
   em,
   i {
-    color: var(--alice-pink);
+    color: var(--ctp-mauve);
   }
 
   mark {
@@ -1023,7 +1081,7 @@ article,
     }
   }
 
-  // Tables (fixes Quartz base.scss's broken `padding: 1.5rem` on <table>)
+  // Tables
   .table-container {
     width: 100%;
     margin-block: 1.2em;
@@ -1095,9 +1153,9 @@ article,
     }
 
     &:checked {
-      background-color: var(--alice-claret);
-      border-color: var(--alice-pink);
-      box-shadow: 0 0 0 2px rgba(246, 150, 179, 0.18);
+      background-color: var(--ctp-mauve);
+      border-color: var(--ctp-mauve);
+      box-shadow: 0 0 0 2px var(--alice-glow);
 
       &::after {
         border-color: var(--checkbox-marker-color);
@@ -1107,7 +1165,7 @@ article,
 
   // Footnotes
   .footnote-ref {
-    color: var(--alice-pink);
+    color: var(--ctp-mauve);
     font-weight: 800;
   }
 
@@ -1119,13 +1177,13 @@ article,
     padding-top: 1rem;
   }
 
-  // Custom Alice Velvet layout classes
+  // Custom layout classes
   .alice-card {
     border: 1px solid var(--alice-line);
     border-radius: var(--radius-l);
     padding: 1rem 1.1rem;
     background: var(--background-secondary);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 28px rgba(17, 17, 27, 0.16);
 
     & > :first-child {
       margin-top: 0;
@@ -1138,7 +1196,7 @@ article,
   .alice-panel {
     border-block: 1px solid var(--alice-line);
     padding: 1.2rem 0;
-    background: linear-gradient(90deg, transparent, rgba(246, 150, 179, 0.06), transparent);
+    background: linear-gradient(90deg, transparent, rgba(203, 166, 247, 0.07), transparent);
 
     & > :first-child {
       margin-top: 0;
@@ -1169,14 +1227,14 @@ article,
   }
 
   .alice-kicker {
-    color: var(--alice-pink);
+    color: var(--ctp-mauve);
     font-family: var(--alice-accent-font);
     font-size: 0.86em;
   }
 }
 
 // ============================================================================
-// Themed Horizontal Rule (also used as divider in DefaultFrame)
+// Themed Horizontal Rule
 // ============================================================================
 
 .center hr,
@@ -1190,7 +1248,7 @@ article hr,
   width: 100%;
   max-width: 100%;
   background:
-    radial-gradient(circle, var(--alice-pink) 0 2px, transparent 3px),
+    radial-gradient(circle, var(--ctp-mauve) 0 2px, transparent 3px),
     linear-gradient(90deg, transparent, var(--alice-line-strong), transparent);
   background-position: center, center;
   background-repeat: no-repeat;
@@ -1200,20 +1258,20 @@ article hr,
 }
 
 // ============================================================================
-// Callouts (Alice Velvet base + custom callout vocabulary)
+// Callouts (Catppuccin Semantic Callouts)
 // ============================================================================
 
 article .callout,
 blockquote.callout {
-  border: 1px solid rgba(246, 150, 179, 0.18);
-  border-left: 5px solid var(--alice-wineshade-soft);
+  border: 1px solid var(--alice-line-strong);
+  border-left: 5px solid var(--ctp-mauve);
   border-radius: var(--radius-l);
   background: var(--background-modifier-hover);
   padding: 0.9rem 1.15rem;
   margin: 1.25rem 0;
   color: var(--text-normal);
 
-  --color: var(--alice-pink);
+  --color: var(--ctp-mauve);
 
   @media (max-width: 600px) {
     border-radius: var(--radius-m);
@@ -1264,61 +1322,61 @@ blockquote.callout {
   &[data-callout="note"],
   &[data-callout="todo"],
   &[data-callout="abstract"] {
-    border-left-color: var(--alice-wineshade-soft);
-    --color: var(--text-accent);
+    border-left-color: var(--ctp-blue);
+    --color: var(--ctp-blue);
   }
 
   &[data-callout="quote"],
   &[data-callout="cite"] {
-    border-left-color: var(--alice-pink);
-    --color: var(--alice-pink);
+    border-left-color: var(--ctp-mauve);
+    --color: var(--ctp-mauve);
   }
 
   &[data-callout="tip"],
   &[data-callout="success"] {
-    border-left-color: var(--text-muted);
-    --color: var(--text-muted);
+    border-left-color: var(--ctp-green);
+    --color: var(--ctp-green);
   }
 
   &[data-callout="warning"],
   &[data-callout="danger"],
   &[data-callout="error"] {
-    border-left-color: var(--alice-red-suits);
-    --color: var(--alice-red-suits);
-    box-shadow: inset 0 0 0 1px rgba(221, 20, 64, 0.14);
+    border-left-color: var(--ctp-red);
+    --color: var(--ctp-red);
+    box-shadow: inset 0 0 0 1px rgba(243, 139, 168, 0.16);
   }
 
   &[data-callout="story"],
   &[data-callout="journal"] {
-    border-left-color: var(--alice-pink);
+    border-left-color: var(--ctp-mauve);
     background:
-      linear-gradient(135deg, rgba(246, 150, 179, 0.1), transparent 52%),
+      linear-gradient(135deg, rgba(203, 166, 247, 0.12), transparent 52%),
       var(--background-modifier-hover);
-    --color: var(--alice-pink);
+    --color: var(--ctp-mauve);
 
     .callout-title {
-      color: var(--alice-pink);
+      color: var(--ctp-mauve);
     }
   }
 
   &[data-callout="clue"],
   &[data-callout="map"] {
-    border-left-color: var(--alice-red-suits);
+    border-left-color: var(--ctp-pink);
     background:
-      linear-gradient(135deg, rgba(221, 20, 64, 0.1), transparent 54%),
+      linear-gradient(135deg, rgba(245, 194, 231, 0.1), transparent 54%),
       var(--background-modifier-hover);
-    --color: var(--text-accent-hover);
+    --color: var(--ctp-pink);
 
     .callout-title {
-      color: var(--text-accent-hover);
+      color: var(--ctp-pink);
     }
   }
 
   &[data-callout="aside"],
   &[data-callout="note-card"] {
-    border-left-color: var(--alice-wineshade-soft);
+    border-left-color: var(--ctp-lavender);
     background:
-      linear-gradient(135deg, rgba(90, 72, 100, 0.16), transparent 58%),
+      linear-gradient(135deg, rgba(180, 190, 254, 0.12), transparent 58%),
       var(--background-secondary);
 
     .callout-content {
@@ -1329,7 +1387,7 @@ blockquote.callout {
 
   &[data-callout="quote-card"],
   &[data-callout="letter"] {
-    border-left-color: var(--alice-gin-tonic-muted);
+    border-left-color: var(--ctp-subtext1);
     background: var(--background-secondary);
 
     .callout-content {
@@ -1441,7 +1499,7 @@ blockquote.callout {
       margin: 0;
     }
     .fold {
-      color: var(--alice-pink);
+      color: var(--ctp-mauve);
     }
   }
 
@@ -1491,8 +1549,8 @@ blockquote.callout {
     border: 1px solid var(--alice-line-strong);
     border-radius: var(--radius-l);
     background:
-      radial-gradient(circle at 18% 16%, rgba(246, 150, 179, 0.1), transparent 28%),
-      radial-gradient(circle at 82% 78%, rgba(132, 11, 42, 0.14), transparent 32%),
+      radial-gradient(circle at 18% 16%, rgba(203, 166, 247, 0.12), transparent 28%),
+      radial-gradient(circle at 82% 78%, rgba(180, 190, 254, 0.12), transparent 32%),
       linear-gradient(
         135deg,
         var(--alice-graph-grid) 25%,
@@ -1505,7 +1563,7 @@ blockquote.callout {
       ),
       var(--background-primary);
     background-size: auto, auto, 34px 34px, auto;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 12px 28px rgba(17, 17, 27, 0.18);
 
     & > .global-graph-icon {
       border-radius: 999px;
@@ -1524,8 +1582,8 @@ blockquote.callout {
     border: 1px solid var(--alice-line-strong);
     border-radius: var(--radius-l);
     background:
-      radial-gradient(circle at 18% 16%, rgba(246, 150, 179, 0.1), transparent 28%),
-      radial-gradient(circle at 82% 78%, rgba(132, 11, 42, 0.14), transparent 32%),
+      radial-gradient(circle at 18% 16%, rgba(203, 166, 247, 0.12), transparent 28%),
+      radial-gradient(circle at 82% 78%, rgba(180, 190, 254, 0.12), transparent 32%),
       linear-gradient(
         135deg,
         var(--alice-graph-grid) 25%,
@@ -1538,7 +1596,7 @@ blockquote.callout {
       ),
       var(--background-primary);
     background-size: auto, auto, 34px 34px, auto;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 24px 70px rgba(17, 17, 27, 0.38);
   }
 }
 
@@ -1553,7 +1611,7 @@ blockquote.callout {
     background: var(--background-secondary);
     border: 1px solid var(--alice-line);
     border-radius: var(--radius-l);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 24px 70px rgba(17, 17, 27, 0.32);
   }
 
   & > input {
@@ -1618,7 +1676,7 @@ blockquote.callout {
     border: 1px solid var(--alice-line);
     border-radius: var(--radius-l);
     background: var(--background-secondary);
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 18px 42px rgba(17, 17, 27, 0.28);
     padding: 1rem 1.25rem;
     font-family: var(--alice-body-font);
 
