@@ -1,8 +1,8 @@
 ---
-title: hush hush
+title: shiori
 ---
 
-hello!
+hello! 
 
 ### Browse years
 * **[[2026/index|2026 list]]**
